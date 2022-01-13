@@ -1,0 +1,11 @@
+name: "snyk test"
+on: [deployment]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Snyk Monitor
+        run: snyk monitor
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
