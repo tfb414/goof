@@ -76,7 +76,7 @@ marked.setOptions({ sanitize: true });
 app.locals.marked = marked;
 
 // development only
-if (app.get('env') == 'development') {
+if (app.get('env') === 'development') {
   app.use(errorHandler());
 }
 
